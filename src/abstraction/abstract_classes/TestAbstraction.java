@@ -41,6 +41,7 @@ public class TestAbstraction {
         }
         System.out.println(count);
         System.out.println("The most expensive phone is = " + mostExpensivePhone.getClass().getSimpleName());
+        System.out.println("The color of the most expensive phone is = " + mostExpensivePhone.color);
 
         System.out.println(Iphone.OS);
         System.out.println(Samsung.OS);
