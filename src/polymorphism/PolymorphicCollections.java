@@ -1,5 +1,9 @@
 package polymorphism;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
 public class PolymorphicCollections {
     public static void main(String[] args) {
         Cat cat1 = new Cat();
@@ -34,11 +38,23 @@ public class PolymorphicCollections {
         animal2.eat();
         animal2.sleep();
 
+        System.out.println("\n---Array ----\n");
         //Animal, Cat, Dog
         Animal[] animals = {cat1, dog1, animal1, animal2, animal3};
 
         for (Animal animal : animals) {
             System.out.println(animal.getClass().getSimpleName());
         }
+
+        System.out.println("\n---ArrayList Collections of Animals----\n");
+
+        ArrayList<Animal> animalList = new ArrayList<>(Arrays.asList(animals));
+        for (Animal animal : animalList) { //1st option
+            System.out.println(animal.getClass().getSimpleName());
+        }
+
+        animalList.forEach(Animal::eat); //2nd option
+
+        new ArrayList<>(Arrays.asList(animals)).forEach(Animal::eat); //Anonymous object
     }
 }
